@@ -1,6 +1,6 @@
 return {
   _all = {
-    lua = './tests/bootstrap.sh',
+    lua = './tests/bootstrap-busted.sh',
     coverage = false,
   },
   default = {
