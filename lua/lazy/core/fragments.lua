@@ -113,7 +113,7 @@ function M:add(plugin)
         fragment.url = fragment.url or plugin[1]
       else
         fragment.name = fragment.name or plugin[1]:sub(slash + 1)
-        fragment.url = fragment.url or Config.options.git.url_format:format(plugin[1])
+        fragment.url = fragment.url or Config.options.git.url_format:format(Config.options.git.rewrite_path(plugin[1]))
       end
     else
       fragment.name = fragment.name or plugin[1]
