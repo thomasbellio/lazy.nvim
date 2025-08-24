@@ -32,7 +32,7 @@ M.defaults = {
     url_format = "https://github.com/%s.git",
     rewrite_path = function(plugin_path)
       return plugin_path
-    end
+    end,
     -- lazy.nvim requires git >=2.19.0. If you really want to use lazy with an older version,
     -- then set the below to false. This should work, but is NOT supported and will
     -- increase downloads a lot.

@@ -1,5 +1,6 @@
 return {
   _all = {
+    lua = './tests/bootstrap.sh',
     coverage = false,
   },
   default = {
