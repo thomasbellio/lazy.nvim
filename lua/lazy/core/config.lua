@@ -30,8 +30,8 @@ M.defaults = {
     log = { "-8" }, -- show the last 8 commits
     timeout = 120, -- kill processes that take more than 2 minutes
     url_format = "https://github.com/%s.git",
-    rewrite_path = function(plugin_path)
-      return plugin_path
+    rewrite_plugin_url = function(plugin_url)
+      return plugin_url
     end,
     -- lazy.nvim requires git >=2.19.0. If you really want to use lazy with an older version,
     -- then set the below to false. This should work, but is NOT supported and will

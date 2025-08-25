@@ -251,6 +251,8 @@ SPEC SOURCE                           *lazy.nvim-🔌-plugin-spec-spec-source*
   ---------- ---------- -------------------------------------------------------------
   [1]        string?    Short plugin url. Will be expanded using
                         config.git.url_format. Can also be a url or dir.
+			This can be overridden using the
+			'git.config.rewrite_plugin_url' function.
 
   dir        string?    A directory pointing to a local plugin
 
@@ -640,6 +642,9 @@ will be added to the plugin’s spec.
         log = { "-8" }, -- show the last 8 commits
         timeout = 120, -- kill processes that take more than 2 minutes
         url_format = "https://github.com/%s.git",
+	rewrite_plugin_url = function(plugin_url)
+	  return plugin_url
+	end
         -- lazy.nvim requires git >=2.19.0. If you really want to use lazy with an older version,
         -- then set the below to false. This should work, but is NOT supported and will
         -- increase downloads a lot.
