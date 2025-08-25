@@ -327,7 +327,7 @@ function M.load()
   }
   specs[#specs + 1] = M.find_local_spec()
   specs[#specs + 1] = { "folke/lazy.nvim" }
-
+  vim.notify("SPEC: " .. vim.inspect(specs))
   Config.spec:parse(specs)
 
   -- override some lazy props
