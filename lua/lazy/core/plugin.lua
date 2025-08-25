@@ -327,7 +327,13 @@ function M.load()
   }
   specs[#specs + 1] = M.find_local_spec()
   specs[#specs + 1] = { "folke/lazy.nvim" }
-  vim.notify("SPEC: " .. vim.inspect(specs))
+  local file = io.open(vim.fn.stdpath("data") .. "/lazy-specs-debug.lua", "w")
+  if file then
+    file:write("-- Lazy.nvim specs debug output\n")
+    file:write("return " .. vim.inspect(specs))
+    file:close()
+    print("Specs written to: " .. vim.fn.stdpath("data") .. "/lazy-specs-debug.lua")
+  end
   Config.spec:parse(specs)
 
   -- override some lazy props
